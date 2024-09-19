@@ -11,6 +11,42 @@ script = ExtResource("1_h2euc")
 [node name="Cobblestone" parent="." instance=ExtResource("1_o5hge")]
 position = Vector2(187, 88)
 
+[node name="Cobblestone2" parent="." instance=ExtResource("1_o5hge")]
+position = Vector2(136, 136)
+
+[node name="Cobblestone21" parent="." instance=ExtResource("1_o5hge")]
+position = Vector2(64, 88)
+
+[node name="Cobblestone22" parent="." instance=ExtResource("1_o5hge")]
+position = Vector2(1024, 568)
+
+[node name="Cobblestone23" parent="." instance=ExtResource("1_o5hge")]
+position = Vector2(1184, 568)
+
+[node name="Cobblestone13" parent="." instance=ExtResource("1_o5hge")]
+position = Vector2(552, 328)
+
+[node name="Cobblestone17" parent="." instance=ExtResource("1_o5hge")]
+position = Vector2(656, 376)
+
+[node name="Cobblestone18" parent="." instance=ExtResource("1_o5hge")]
+position = Vector2(760, 424)
+
+[node name="Cobblestone19" parent="." instance=ExtResource("1_o5hge")]
+position = Vector2(864, 472)
+
+[node name="Cobblestone20" parent="." instance=ExtResource("1_o5hge")]
+position = Vector2(968, 520)
+
+[node name="Cobblestone14" parent="." instance=ExtResource("1_o5hge")]
+position = Vector2(448, 280)
+
+[node name="Cobblestone15" parent="." instance=ExtResource("1_o5hge")]
+position = Vector2(344, 232)
+
+[node name="Cobblestone16" parent="." instance=ExtResource("1_o5hge")]
+position = Vector2(240, 184)
+
 [node name="Cobblestone3" parent="." instance=ExtResource("1_o5hge")]
 position = Vector2(1128, 520)
 

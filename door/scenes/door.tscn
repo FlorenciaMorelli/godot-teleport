@@ -1,11 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhdpli85o3v4c"]
+[gd_scene load_steps=4 format=3 uid="uid://bhdpli85o3v4c"]
 
 [ext_resource type="Script" path="res://door/scripts/door.gd" id="1_k0tm2"]
-
-[sub_resource type="Gradient" id="Gradient_7f5bb"]
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_obatm"]
-gradient = SubResource("Gradient_7f5bb")
+[ext_resource type="Texture2D" uid="uid://bikyo510dye1p" path="res://assets/sprites/door1.png" id="2_2n0b6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ci6jj"]
 size = Vector2(86, 147)
@@ -14,9 +10,9 @@ size = Vector2(86, 147)
 script = ExtResource("1_k0tm2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(0.434736, 0.25774, 0.0292601, 1)
-scale = Vector2(0.335938, 146.5)
-texture = SubResource("GradientTexture1D_obatm")
+position = Vector2(-0.499996, -5.5)
+scale = Vector2(0.679687, 0.621094)
+texture = ExtResource("2_2n0b6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ci6jj")

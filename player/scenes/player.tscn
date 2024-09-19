@@ -1,11 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://do48vrsn4tfgs"]
+[gd_scene load_steps=4 format=3 uid="uid://do48vrsn4tfgs"]
 
 [ext_resource type="Script" path="res://player/scripts/player.gd" id="1_72owq"]
-
-[sub_resource type="Gradient" id="Gradient_i6iah"]
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_yp5b2"]
-gradient = SubResource("Gradient_i6iah")
+[ext_resource type="Texture2D" uid="uid://dh2vu0firqelo" path="res://assets/sprites/GraveRobber.png" id="2_6nska"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gdltk"]
 radius = 18.0
@@ -15,8 +11,9 @@ height = 70.0
 script = ExtResource("1_72owq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.125, 66.5)
-texture = SubResource("GradientTexture1D_yp5b2")
+position = Vector2(14.5, -17)
+scale = Vector2(1.85417, 1.95833)
+texture = ExtResource("2_6nska")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_gdltk")
