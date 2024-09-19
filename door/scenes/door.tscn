@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhdpli85o3v4c"]
+
+[ext_resource type="Script" path="res://door/scripts/door.gd" id="1_k0tm2"]
+
+[sub_resource type="Gradient" id="Gradient_7f5bb"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_obatm"]
+gradient = SubResource("Gradient_7f5bb")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ci6jj"]
+size = Vector2(86, 147)
+
+[node name="Door" type="Area2D"]
+script = ExtResource("1_k0tm2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.434736, 0.25774, 0.0292601, 1)
+scale = Vector2(0.335938, 146.5)
+texture = SubResource("GradientTexture1D_obatm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ci6jj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
