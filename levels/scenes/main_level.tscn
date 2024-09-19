@@ -45,8 +45,9 @@ position = Vector2(296, 136)
 position = Vector2(632, 160)
 initialPosition = Vector2(300, -100)
 
-[node name="Door" parent="." instance=ExtResource("3_b3dhc")]
-position = Vector2(1192, 424)
-
-[node name="Door2" parent="." instance=ExtResource("3_b3dhc")]
+[node name="TopDoor" parent="." instance=ExtResource("3_b3dhc")]
 position = Vector2(187, -8)
+doorID = 2
+
+[node name="BottomDoor" parent="." instance=ExtResource("3_b3dhc")]
+position = Vector2(1192, 424)
