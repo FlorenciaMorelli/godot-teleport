@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://doda3sgjstg13"]
+[gd_scene load_steps=7 format=3 uid="uid://doda3sgjstg13"]
 
 [ext_resource type="Script" path="res://levels/scripts/main_level.gd" id="1_h2euc"]
 [ext_resource type="PackedScene" uid="uid://dw7x0bf1ryyxm" path="res://floor/scenes/floor.tscn" id="1_o5hge"]
 [ext_resource type="PackedScene" uid="uid://d26oj350ntjgs" path="res://backgrounds/scenes/background.tscn" id="2_jjyjm"]
 [ext_resource type="PackedScene" uid="uid://do48vrsn4tfgs" path="res://player/scenes/player.tscn" id="2_v8lyr"]
-[ext_resource type="PackedScene" uid="uid://bhdpli85o3v4c" path="res://door/scenes/door.tscn" id="3_b3dhc"]
+[ext_resource type="PackedScene" uid="uid://bhdpli85o3v4c" path="res://doors/scenes/door.tscn" id="3_b3dhc"]
+[ext_resource type="PackedScene" uid="uid://kfceym6127k8" path="res://doors/scenes/finalDoor.tscn" id="6_d3bsq"]
 
 [node name="MainLevel" type="Node2D"]
 script = ExtResource("1_h2euc")
@@ -92,3 +93,6 @@ doorID = 2
 
 [node name="BottomDoor" parent="." instance=ExtResource("3_b3dhc")]
 position = Vector2(1192, 424)
+
+[node name="FinalDoor" parent="." instance=ExtResource("6_d3bsq")]
+position = Vector2(870, 276)
