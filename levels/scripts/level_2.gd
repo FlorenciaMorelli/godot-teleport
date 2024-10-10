@@ -1,17 +1,13 @@
-extends Area2D
-
-signal change_scene
+extends Node2D
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	fade_out()
 
+func fade_out():
+	$CanvasLayer/AnimationPlayer.play("fade_out")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
-#	Change level. Trucho
-func _on_body_entered(body: Node2D) -> void:
-	emit_signal("change_scene")

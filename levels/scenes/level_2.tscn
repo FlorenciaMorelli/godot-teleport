@@ -1,25 +1,56 @@
-[gd_scene load_steps=8 format=3 uid="uid://cimit0344mmta"]
+[gd_scene load_steps=10 format=3 uid="uid://cimit0344mmta"]
 
-[ext_resource type="Script" path="res://levels/scripts/main_level.gd" id="1_0kv6c"]
+[ext_resource type="Script" path="res://levels/scripts/level_2.gd" id="1_41eqh"]
 [ext_resource type="PackedScene" uid="uid://d26oj350ntjgs" path="res://backgrounds/scenes/background.tscn" id="2_t4m3s"]
 [ext_resource type="PackedScene" uid="uid://dw7x0bf1ryyxm" path="res://floor/scenes/floor.tscn" id="3_863e4"]
 [ext_resource type="PackedScene" uid="uid://do48vrsn4tfgs" path="res://player/scenes/player.tscn" id="4_5uoux"]
 [ext_resource type="PackedScene" uid="uid://bhdpli85o3v4c" path="res://doors/scenes/door.tscn" id="5_njaah"]
 
-[sub_resource type="Gradient" id="Gradient_5n1hy"]
-offsets = PackedFloat32Array(0, 0.506024, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.620482, 0.620482, 0.620482, 1, 1, 1, 1, 1)
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gx4uu"]
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_nk35c"]
-gradient = SubResource("Gradient_5n1hy")
+[sub_resource type="Animation" id="Animation_xvcf6"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vr7g1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r3wxg"]
+_data = {
+"RESET": SubResource("Animation_vr7g1"),
+"fade_out": SubResource("Animation_xvcf6")
+}
 
 [node name="Level2" type="Node2D"]
-script = ExtResource("1_0kv6c")
+script = ExtResource("1_41eqh")
 
 [node name="Background" parent="." instance=ExtResource("2_t4m3s")]
-position = Vector2(538.5, 208.5)
-scale = Vector2(9.77734, 1703)
-texture = SubResource("GradientTexture1D_nk35c")
+position = Vector2(596, 208.5)
+scale = Vector2(2874, 1703)
+texture = SubResource("PlaceholderTexture2D_gx4uu")
 
 [node name="Cobblestone" parent="." instance=ExtResource("3_863e4")]
 position = Vector2(187, 88)
@@ -100,3 +131,17 @@ doorID = 2
 
 [node name="BottomDoor" parent="." instance=ExtResource("5_njaah")]
 position = Vector2(1192, 424)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = -843.0
+offset_top = -470.0
+offset_right = 1963.0
+offset_bottom = 1197.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+"": SubResource("AnimationLibrary_r3wxg")
+}
