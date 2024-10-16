@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://doda3sgjstg13"]
+[gd_scene load_steps=13 format=3 uid="uid://doda3sgjstg13"]
 
 [ext_resource type="Script" path="res://levels/scripts/main_level.gd" id="1_h2euc"]
 [ext_resource type="PackedScene" uid="uid://dw7x0bf1ryyxm" path="res://floor/scenes/floor.tscn" id="1_o5hge"]
@@ -7,6 +7,22 @@
 [ext_resource type="PackedScene" uid="uid://bhdpli85o3v4c" path="res://doors/scenes/door.tscn" id="3_b3dhc"]
 [ext_resource type="PackedScene" uid="uid://kfceym6127k8" path="res://doors/scenes/finalDoor.tscn" id="6_d3bsq"]
 [ext_resource type="Script" path="res://levels/scripts/color_rect.gd" id="7_ia231"]
+[ext_resource type="PackedScene" uid="uid://ysrpb8j11fyl" path="res://lamps/scenes/lamp.tscn" id="8_osejh"]
+
+[sub_resource type="Animation" id="Animation_2f6x4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_yjk1i"]
 resource_name = "fade_in"
@@ -50,21 +66,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_2f6x4"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c6rxt"]
@@ -150,10 +151,6 @@ position = Vector2(400, 184)
 [node name="Cobblestone12" parent="." instance=ExtResource("1_o5hge")]
 position = Vector2(296, 136)
 
-[node name="Player" parent="." instance=ExtResource("2_v8lyr")]
-position = Vector2(632, 160)
-initialPosition = Vector2(300, -100)
-
 [node name="TopDoor" parent="." instance=ExtResource("3_b3dhc")]
 position = Vector2(187, -8)
 doorID = 2
@@ -167,10 +164,10 @@ position = Vector2(870, 276)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-offset_left = -354.0
-offset_top = -292.0
-offset_right = 1735.0
-offset_bottom = 917.0
+offset_left = -364.0
+offset_top = -245.0
+offset_right = 1725.0
+offset_bottom = 964.0
 color = Color(0, 0, 0, 0)
 script = ExtResource("7_ia231")
 
@@ -178,3 +175,26 @@ script = ExtResource("7_ia231")
 libraries = {
 "": SubResource("AnimationLibrary_c6rxt")
 }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.259294, 0.259294, 0.259294, 1)
+
+[node name="Lamp" parent="." instance=ExtResource("8_osejh")]
+position = Vector2(860, 153)
+scale = Vector2(0.2, 0.2)
+
+[node name="Lamp2" parent="." instance=ExtResource("8_osejh")]
+position = Vector2(1174, 304)
+scale = Vector2(0.2, 0.2)
+
+[node name="Lamp3" parent="." instance=ExtResource("8_osejh")]
+position = Vector2(169, -127)
+scale = Vector2(0.2, 0.2)
+
+[node name="Lamp4" parent="." instance=ExtResource("8_osejh")]
+position = Vector2(498, 87)
+scale = Vector2(0.2, 0.2)
+
+[node name="Player" parent="." instance=ExtResource("2_v8lyr")]
+position = Vector2(632, 160)
+initialPosition = Vector2(300, -100)
