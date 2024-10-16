@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://kfceym6127k8"]
+[gd_scene load_steps=5 format=3 uid="uid://kfceym6127k8"]
 
 [ext_resource type="Script" path="res://doors/scripts/final_door.gd" id="1_vj0je"]
 [ext_resource type="Texture2D" uid="uid://bikyo510dye1p" path="res://assets/sprites/door1.png" id="2_tj5by"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ci6jj"]
 size = Vector2(86, 147)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8ngq4"]
+polygon = PackedVector2Array(-63, -110, -63, -109, -64, -109, -64, 127, -63, 127, -63, 128, 63, 128, 63, 127, 64, 127, 64, -109, 63, -109, 63, -110)
 
 [node name="FinalDoor" type="Area2D"]
 script = ExtResource("1_vj0je")
@@ -16,5 +19,11 @@ texture = ExtResource("2_tj5by")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ci6jj")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+visible = false
+position = Vector2(-0.499996, -5.5)
+scale = Vector2(0.679687, 0.621094)
+occluder = SubResource("OccluderPolygon2D_8ngq4")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

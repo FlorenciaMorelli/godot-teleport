@@ -198,3 +198,9 @@ scale = Vector2(0.2, 0.2)
 [node name="Player" parent="." instance=ExtResource("2_v8lyr")]
 position = Vector2(632, 160)
 initialPosition = Vector2(300, -100)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
+rotation = 0.6353
+shadow_enabled = true
+shadow_filter = 2

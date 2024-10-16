@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://do48vrsn4tfgs"]
+[gd_scene load_steps=7 format=3 uid="uid://do48vrsn4tfgs"]
 
 [ext_resource type="Script" path="res://player/scripts/player.gd" id="1_72owq"]
 [ext_resource type="Texture2D" uid="uid://dh2vu0firqelo" path="res://assets/sprites/GraveRobber.png" id="2_6nska"]
@@ -9,6 +9,15 @@ height = 70.0
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_k46ye"]
 polygon = PackedVector2Array(-10, -9, -10, -8, -11, -8, -11, -7, -12, -7, -12, -6, -13, -6, -13, -5, -14, -5, -14, -4, -15, -4, -15, -2, -14, -2, -14, 3, -15, 3, -15, 4, -16, 4, -16, 6, -17, 6, -17, 9, -18, 9, -18, 11, -17, 11, -17, 12, -13, 12, -13, 13, -12, 13, -12, 15, -13, 15, -13, 19, -14, 19, -14, 21, -15, 21, -15, 24, -11, 24, -11, 22, -10, 22, -10, 20, -9, 20, -9, 17, -8, 17, -8, 14, -7, 14, -7, 15, -5, 15, -5, 17, -4, 17, -4, 20, -3, 20, -3, 24, 1, 24, 1, 19, 0, 19, 0, 16, -1, 16, -1, 13, -2, 13, -2, 12, 0, 12, 0, 9, -1, 9, -1, 8, -2, 8, -2, 7, -3, 7, -3, 5, -2, 5, -2, 2, -3, 2, -3, 0, -4, 0, -4, -2, -3, -2, -3, -3, -2, -3, -2, -4, -1, -4, -1, -7, -2, -7, -2, -8, -6, -8, -6, -9)
+
+[sub_resource type="Gradient" id="Gradient_enyb3"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_o3ylw"]
+gradient = SubResource("Gradient_enyb3")
+fill = 1
+fill_from = Vector2(0.504587, 0.477064)
+fill_to = Vector2(0.90367, 0.123853)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_72owq")
@@ -27,3 +36,8 @@ shape = SubResource("CapsuleShape2D_gdltk")
 position = Vector2(14.5, -17)
 scale = Vector2(1.85417, 1.95833)
 occluder = SubResource("OccluderPolygon2D_k46ye")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(1.78814e-07, -11.5)
+scale = Vector2(0.28125, 0.453125)
+texture = SubResource("GradientTexture2D_o3ylw")
