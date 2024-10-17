@@ -1,0 +1,77 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgl6uivk1sfa2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nol7j"]
+radius = 7.0
+height = 16.0
+
+[sub_resource type="Gradient" id="Gradient_t5kbf"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_b5i4y"]
+gradient = SubResource("Gradient_t5kbf")
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ur34d"]
+radius = 7.0
+height = 54.0
+
+[node name="Rope(StaticBody2D)" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_nol7j")
+
+[node name="Rope-Seg1(PinJoint2D)" type="PinJoint2D" parent="."]
+node_a = NodePath("..")
+node_b = NodePath("../Segment1(RigidBody2D)")
+
+[node name="Segment1(RigidBody2D)" type="RigidBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Segment1(RigidBody2D)"]
+scale = Vector2(0.05, 50)
+texture = SubResource("GradientTexture1D_b5i4y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Segment1(RigidBody2D)"]
+shape = SubResource("CapsuleShape2D_ur34d")
+
+[node name="Seg1-Seg2(PinJoint2D)" type="PinJoint2D" parent="."]
+position = Vector2(0, 25)
+node_a = NodePath("../Segment1(RigidBody2D)")
+node_b = NodePath("../Segment2(RigidBody2D)")
+
+[node name="Segment2(RigidBody2D)" type="RigidBody2D" parent="."]
+position = Vector2(0, 50)
+
+[node name="Sprite2D" type="Sprite2D" parent="Segment2(RigidBody2D)"]
+scale = Vector2(0.05, 50)
+texture = SubResource("GradientTexture1D_b5i4y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Segment2(RigidBody2D)"]
+shape = SubResource("CapsuleShape2D_ur34d")
+
+[node name="Seg2-Seg3(PinJoint2D)" type="PinJoint2D" parent="."]
+position = Vector2(0, 75)
+node_a = NodePath("../Segment2(RigidBody2D)")
+node_b = NodePath("../Segment3(RigidBody2D)")
+
+[node name="Segment3(RigidBody2D)" type="RigidBody2D" parent="."]
+position = Vector2(0, 100)
+
+[node name="Sprite2D" type="Sprite2D" parent="Segment3(RigidBody2D)"]
+scale = Vector2(0.05, 50)
+texture = SubResource("GradientTexture1D_b5i4y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Segment3(RigidBody2D)"]
+shape = SubResource("CapsuleShape2D_ur34d")
+
+[node name="Seg3-Seg4(PinJoint2D)" type="PinJoint2D" parent="."]
+position = Vector2(0, 125)
+node_a = NodePath("../Segment3(RigidBody2D)")
+node_b = NodePath("../Segment4(RigidBody2D)")
+
+[node name="Segment4(RigidBody2D)" type="RigidBody2D" parent="."]
+position = Vector2(0, 150)
+
+[node name="Sprite2D" type="Sprite2D" parent="Segment4(RigidBody2D)"]
+scale = Vector2(0.05, 50)
+texture = SubResource("GradientTexture1D_b5i4y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Segment4(RigidBody2D)"]
+shape = SubResource("CapsuleShape2D_ur34d")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://doda3sgjstg13"]
+[gd_scene load_steps=15 format=3 uid="uid://doda3sgjstg13"]
 
 [ext_resource type="Script" path="res://levels/scripts/main_level.gd" id="1_h2euc"]
 [ext_resource type="PackedScene" uid="uid://dw7x0bf1ryyxm" path="res://floor/scenes/floor.tscn" id="1_o5hge"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://kfceym6127k8" path="res://doors/scenes/finalDoor.tscn" id="6_d3bsq"]
 [ext_resource type="Script" path="res://levels/scripts/color_rect.gd" id="7_ia231"]
 [ext_resource type="PackedScene" uid="uid://ysrpb8j11fyl" path="res://lamps/scenes/lamp.tscn" id="8_osejh"]
+[ext_resource type="PackedScene" uid="uid://dgl6uivk1sfa2" path="res://rope/scene/rope.tscn" id="9_7nwvt"]
 
 [sub_resource type="Animation" id="Animation_2f6x4"]
 length = 0.001
@@ -74,6 +75,9 @@ _data = {
 "fade_in": SubResource("Animation_yjk1i"),
 "fade_out": SubResource("Animation_28ge4")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1l3n"]
+size = Vector2(20, 26)
 
 [node name="MainLevel" type="Node2D"]
 script = ExtResource("1_h2euc")
@@ -204,3 +208,14 @@ visible = false
 rotation = 0.6353
 shadow_enabled = true
 shadow_filter = 2
+
+[node name="Rope" parent="." instance=ExtResource("9_7nwvt")]
+position = Vector2(710, 56)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(758, 95)
+constant_force = Vector2(-900, 980)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(-27, -40)
+shape = SubResource("RectangleShape2D_n1l3n")
