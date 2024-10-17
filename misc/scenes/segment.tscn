@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://j77wyjdpenny"]
+
+[sub_resource type="Gradient" id="Gradient_wybl0"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_m8nly"]
+gradient = SubResource("Gradient_wybl0")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_41wth"]
+size = Vector2(78, 104)
+
+[node name="Segment" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.304688, 104.5)
+texture = SubResource("GradientTexture1D_m8nly")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_41wth")
