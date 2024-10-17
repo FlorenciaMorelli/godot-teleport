@@ -25,7 +25,7 @@ node_b = NodePath("../Segment1(RigidBody2D)")
 [node name="Segment1(RigidBody2D)" type="RigidBody2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Segment1(RigidBody2D)"]
-scale = Vector2(0.05, 50)
+scale = Vector2(0.03, 50)
 texture = SubResource("GradientTexture1D_b5i4y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Segment1(RigidBody2D)"]
@@ -40,7 +40,7 @@ node_b = NodePath("../Segment2(RigidBody2D)")
 position = Vector2(0, 50)
 
 [node name="Sprite2D" type="Sprite2D" parent="Segment2(RigidBody2D)"]
-scale = Vector2(0.05, 50)
+scale = Vector2(0.03, 50)
 texture = SubResource("GradientTexture1D_b5i4y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Segment2(RigidBody2D)"]
@@ -55,7 +55,7 @@ node_b = NodePath("../Segment3(RigidBody2D)")
 position = Vector2(0, 100)
 
 [node name="Sprite2D" type="Sprite2D" parent="Segment3(RigidBody2D)"]
-scale = Vector2(0.05, 50)
+scale = Vector2(0.03, 50)
 texture = SubResource("GradientTexture1D_b5i4y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Segment3(RigidBody2D)"]
@@ -70,7 +70,7 @@ node_b = NodePath("../Segment4(RigidBody2D)")
 position = Vector2(0, 150)
 
 [node name="Sprite2D" type="Sprite2D" parent="Segment4(RigidBody2D)"]
-scale = Vector2(0.05, 50)
+scale = Vector2(0.03, 50)
 texture = SubResource("GradientTexture1D_b5i4y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Segment4(RigidBody2D)"]
